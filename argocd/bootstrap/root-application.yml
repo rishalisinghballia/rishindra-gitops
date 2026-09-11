@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-applications
+  namespace: argocd
+
+spec:
+  project: applications
+
+  source:
+    repoURL: https://github.com/YOUR-GITHUB-USERNAME/rishindra-gitops.git
+    targetRevision: main
+    path: argocd/applications
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
