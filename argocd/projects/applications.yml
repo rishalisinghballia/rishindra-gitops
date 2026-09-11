@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: applications
+  namespace: argocd
+
+spec:
+  description: Applications managed by Argo CD
+
+  sourceRepos:
+    - "https://github.com/rishindrasingh/rishindra-gitops.git"
+
+  destinations:
+    - namespace: easyshop
+      server: https://kubernetes.default.svc
+
+    - namespace: bankapp
+      server: https://kubernetes.default.svc
+
+    - namespace: chatapp
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
