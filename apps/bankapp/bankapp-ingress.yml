@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bankapp-ingress
+  namespace: bankapp  # Adjust if your namespace is different
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP" # <--- Ensure this is HTTP, NOT HTTPS
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - bankapp.rishindra.shop
+    secretName: bankapp-tls-secret
+  rules:
+  - host: bankapp.rishindra.shop
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: bankapp-svc
+            port:
+              number: 8080
