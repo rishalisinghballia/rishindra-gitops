@@ -15,10 +15,8 @@ spec:
       namespace: "*"
 
   clusterResourceWhitelist:
-    - group: ''
-      kind: Namespace
-    - group: storage.k8s.io
-      kind: StorageClass
+    - group: "*"
+      kind: "*"
 
   namespaceResourceWhitelist:
     - group: "*"
