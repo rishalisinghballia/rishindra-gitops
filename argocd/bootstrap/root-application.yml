@@ -5,12 +5,15 @@ metadata:
   namespace: argocd
 
 spec:
-  project: applications
+  project: infrastructure
 
   source:
-    repoURL: https://github.com/YOUR-GITHUB-USERNAME/rishindra-gitops.git
+    repoURL: https://github.com/rishindrasingh/rishindra-gitops.git
     targetRevision: main
     path: argocd/applications
+
+    directory:
+      recurse: true
 
   destination:
     server: https://kubernetes.default.svc
