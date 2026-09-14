@@ -20,7 +20,7 @@ spec:
       containers:
         - name: easyshop
 
-          image: rishindra2308/easyshop:latest
+          image: rishindra2308/easyshop:v1.0.7
 
           imagePullPolicy: IfNotPresent
 
