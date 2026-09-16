@@ -8,7 +8,7 @@ spec:
   project: infrastructure
 
   source:
-    repoURL: https://github.com/rishindrasingh/rishindra-gitops.git
+    repoURL: https://github.com/rishalisinghballia/rishindra-gitops.git
     targetRevision: main
     path: argocd/applications
 
