@@ -7,7 +7,7 @@ spec:
   description: Application workloads managed by Argo CD
 
   sourceRepos:
-    - "https://github.com/rishindrasingh/rishindra-gitops.git"
+    - "https://github.com/rishalisinghballia/rishindra-gitops.git"
 
   destinations:
     - server: https://kubernetes.default.svc
